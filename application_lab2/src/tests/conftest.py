@@ -12,3 +12,7 @@ def flask_app():
 
     yield app
     app_context.pop()
+
+@pytest.fixture()
+def flask_client(flask_app):
+    return flask_app.test_client()
