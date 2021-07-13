@@ -1,0 +1,21 @@
+.post-container {
+    margin: auto;
+    margin-top: 10px;
+    width: 400px;
+    border: 1px solid;
+    border-radius: 10px;
+}
+
+.post {
+    text-align: left;
+    margin: 10px;
+}
+
+.post-area {
+    border: 1px solid;
+    border-color: grey;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 8px;
+    background-color: ivory;
+}
