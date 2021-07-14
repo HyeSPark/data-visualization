@@ -4,7 +4,10 @@ import './App.css';
 import InputBox from './components/InputBox';
 // import PostBox from './components/PostBox';
 import NewsFeed from './components/NewsFeed';
-
+import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 
 class App extends React.Component{
   constructor(props){
@@ -31,8 +34,16 @@ class App extends React.Component{
     return (
       <div className="App">
         {/* Hello, world! */}
-        <InputBox onPostSubmit={this.onPostSubmit}/>
-        <NewsFeed usernames={usernames} posts={posts}/>
+        <Container className="gs-4 mt-4">
+          <Row>
+            <Col>
+              <InputBox onPostSubmit={this.onPostSubmit}/>
+            </Col>
+            <Col>
+              <NewsFeed usernames={usernames} posts={posts}/>
+            </Col>
+          </Row>
+        </Container>
         {/* <PostBox username={username} post={post}/> */}
       </div>
     );

@@ -1,5 +1,6 @@
 import React from 'react';
 import PostBox from '../PostBox';
+import Container from 'react-bootstrap/Container';
 
 class NewsFeed extends React.Component {
     constructor(props){
@@ -11,7 +12,7 @@ class NewsFeed extends React.Component {
         return (
             usernames.map((val, i) => {
                 let idx = usernames.length - i - 1
-                return <PostBox username={usernames[idx]} post={posts[idx]} index={idx+1} key={idx}/>
+                return <Container className="mt-1" key={idx}><PostBox username={usernames[idx]} post={posts[idx]} index={idx+1}/></Container>
             })
         )
     }

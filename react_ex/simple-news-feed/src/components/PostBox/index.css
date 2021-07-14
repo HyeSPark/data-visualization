@@ -1,9 +1,11 @@
 .post-container {
     margin: auto;
     margin-top: 10px;
-    width: 400px;
+    /* width: 400px; */
     border: 1px solid;
     border-radius: 10px;
+    border-color: gray;
+    box-shadow: 3px 3px 5px 5px rgba(0,0,0,0.1);
 }
 
 .post {
@@ -12,10 +14,9 @@
 }
 
 .post-area {
-    border: 1px solid;
     border-color: grey;
     border-radius: 5px;
     margin-bottom: 10px;
     padding: 8px;
-    background-color: ivory;
+    background-color: rgb(245, 245, 245);
 }

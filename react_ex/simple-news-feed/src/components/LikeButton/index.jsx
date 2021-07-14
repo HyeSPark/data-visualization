@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from 'react-bootstrap/Button';
 
 class LikeButton extends React.Component {
     constructor(props) {
@@ -18,7 +19,7 @@ class LikeButton extends React.Component {
     render(){
         const { count } = this.state;
         return (
-            <button onClick={this.updateCount}>{count === 0? "LIKE" : `LIKED ${count} times`}</button>
+            <Button variant="outline-secondary" onClick={this.updateCount}>{count === 0? "LIKE" : `LIKED ${count} times`}</Button>
         )
     }
 

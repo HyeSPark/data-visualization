@@ -1,10 +1,13 @@
 import React from 'react';
+import logo from './logo.svg';
+import { Counter } from './features/counter/Counter';
+import LineChart from './components/LineChart';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <h1>hello world</h1>
+      <LineChart />
     </div>
   );
 }
