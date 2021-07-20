@@ -129,78 +129,78 @@ var yourVlSpec2 = {
   
 
   var yourVlSpec4 = {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "Seattle Weather, 2012-2015",
-    "data": {
-      "url": "data/seattle-weather.csv"
+    $schema: "https://vega.github.io/schema/vega-lite/v5.json",
+    title: "Seattle Weather, 2012-2015",
+    data: {
+      url: "data/seattle-weather.csv"
     },
-    "vconcat": [
+    vconcat: [
       {
-        "encoding": {
-          "color": {
-            "condition": {
-              "param": "brush",
-              "title": "Weather",
-              "field": "weather",
-              "type": "nominal",
-              "scale": {
-                "domain": ["sun", "fog", "drizzle", "rain", "snow"],
-                "range": ["#e7ba52", "#a7a7a7", "#aec7e8", "#1f77b4", "#9467bd"]
+        encoding: {
+          color: {
+            condition: {
+              param: "brush",
+              title: "Weather",
+              field: "weather",
+              type: "nominal",
+              scale: {
+                domain: ["sun", "fog", "drizzle", "rain", "snow"],
+                range: ["#e7ba52", "#a7a7a7", "#aec7e8", "#1f77b4", "#9467bd"]
               }
             },
-            "value": "lightgray"
+            value: "lightgray"
           },
-          "size": {
-            "title": "Precipitation",
-            "field": "precipitation",
-            "scale": {"domain": [-1, 50]},
-            "type": "quantitative"
+          size: {
+            title: "Precipitation",
+            field: "precipitation",
+            scale: {"domain": [-1, 50]},
+            type: "quantitative"
           },
-          "x": {
-            "field": "date",
-            "timeUnit": "monthdate",
-            "title": "Date",
-            "axis": {"format": "%b"}
+          x: {
+            field: "date",
+            timeUnit: "monthdate",
+            title: "Date",
+            axis: {"format": "%b"}
           },
-          "y": {
-            "title": "Maximum Daily Temperature (C)",
-            "field": "temp_max",
-            "scale": {"domain": [-5, 40]},
-            "type": "quantitative"
+          y: {
+            title: "Maximum Daily Temperature (C)",
+            field: "temp_max",
+            scale: {"domain": [-5, 40]},
+            type: "quantitative"
           }
         },
-        "width": "container",
-        "height": 300,
-        "mark": "point",
-        "params": [{
-          "name": "brush",
-          "select": {"type": "interval", "encodings": ["x"]}
+        width: "container",
+        height: 300,
+        mark: "point",
+        params: [{
+          name: "brush",
+          select: {"type": "interval", "encodings": ["x"]}
         }],
-        "transform": [{"filter": {"param": "click"}}]
+        transform: [{"filter": {"param": "click"}}]
       },
       {
-        "encoding": {
-          "color": {
-            "condition": {
-              "param": "click",
-              "field": "weather",
-              "scale": {
-                "domain": ["sun", "fog", "drizzle", "rain", "snow"],
-                "range": ["#e7ba52", "#a7a7a7", "#aec7e8", "#1f77b4", "#9467bd"]
+        encoding: {
+          color: {
+            condition: {
+              param: "click",
+              field: "weather",
+              scale: {
+                domain: ["sun", "fog", "drizzle", "rain", "snow"],
+                range: ["#e7ba52", "#a7a7a7", "#aec7e8", "#1f77b4", "#9467bd"]
               }
             },
-            "value": "lightgray"
+            value: "lightgray"
           },
-          "x": {"aggregate": "count"},
-          "y": {"title": "Weather", "field": "weather"}
+          x: {"aggregate": "count"},
+          y: {"title": "Weather", "field": "weather"}
         },
-        "width": "container",
-        "mark": "bar",
-        "params": [{
-          "name": "click",
-          "select": {"type": "point", "encodings": ["color"]}
+        width: "container",
+        mark: "bar",
+        params: [{
+          name: "click",
+          select: {"type": "point", "encodings": ["color"]}
         }],
-        "transform": [{"filter": {"param": "brush"}}]
+        transform: [{"filter": {"param": "brush"}}]
       }
     ]
   }
