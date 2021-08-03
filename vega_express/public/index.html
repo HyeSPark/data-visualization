@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head> 
+        <meta charset="UTF-8"> 
+        <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js' integrity='sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g==' crossorigin='anonymous'></script> -->
+        <!-- <script src="https://cdn.jsdelivr.net/npm/vega@5"></script> -->
+        <title>Test Web Site</title> 
+    </head>
+    <body>
+        <h1 class="m-4 text-center">Lab 3 - Vega Lite</h1>
+        <div>
+            <h2 class="m-3 text-center">1. Fixed Width</h2>
+            <div class="m-3 row text-center">
+                <div class="col">
+                    <div id="vis-1" class="chart"></div>
+                </div>
+            </div>
+            <h2 class="m-3 text-center">2. Full Width with Window Size</h2>
+            <div class="m-3 row text-center">
+                <div class="col">
+                    <div id="vis-2" class="chart"></div>
+                </div>
+            </div>
+            <h2 class="m-3 text-center">3-1. Responsive Width</h2>
+            <div class="m-3 gx-5 row text-center">
+                <div class="col-lg-8 col-sm-12">
+                    <div id="vis-3" class="chart" style="width:100%"></div>
+                </div>
+                <div class="col-lg-4 col-sm-12">
+                    <div class="bg-light border border-3 rounded-3 p-3 text-start fs-5" style="width:100%">
+                        <p>
+                            This graph explain the weather type of Seattle in each month of the year.
+                            There are sun, fog, drizzle, rain and snow as the weather type.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <h2 class="m-3 text-center">3-2. Layout with Bootstrap</h2>
+            <div class="m-3 gx-3 row text-center">
+                <div class="col-lg-4 col-sm-6">
+                    <div id="vis-4" class="chart" style="width:100%"></div>
+                </div>
+                <div class="col-lg-8 col-sm-6">
+                    <div id="vis-5" class="chart" style="width:100%"></div>
+                </div>
+            </div>
+            <h2 class="m-3 text-center">3-3. Styling with Bootstrap component</h2>
+            <div class="m-3 gx-5 row">
+                <div class="col-lg-6 col-sm-8 mx-auto">
+                    <div class="card text-start">
+                        <div class="card-header fw-bold">Seattle weather</div>
+                        <div class="card-body">
+                            <h5 class="card-title">By the month of the year</h5>
+                            <div id="vis-6" class="chart" style="width:100%"></div>
+                            <a href="#" class="btn btn-secondary">Source</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h2 class="m-3 text-center">4. Callbacks</h2>
+            <div class="col-6 mx-auto gx-3 row">
+                <div class="col">
+                    <input id="number-1" type="text" class="form-control" placeholder="Number" aria-label="number" aria-describedby="basic-addon1">
+                </div>
+                <div class="col">
+                    <input id="number-2" type="text" class="form-control" placeholder="Number" aria-label="number" aria-describedby="basic-addon2">
+                </div>
+                <table class="table mt-2">
+                    <tbody>
+                        <tr>
+                            <td class='col-6' id='multiple-1-1'>&nbsp;</td> <td class='col-6' id='multiple-1-2'>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td class='col-6' id='multiple-2-1'>&nbsp;</td> <td class='col-6' id='multiple-2-2'>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td class='col-6' id='multiple-3-1'>&nbsp;</td> <td class='col-6' id='multiple-3-2'>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td class='col-6' id='multiple-4-1'>&nbsp;</td> <td class='col-6' id='multiple-4-2'>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td class='col-6' id='multiple-5-1'>&nbsp;</td> <td class='col-6' id='multiple-5-2'>&nbsp;</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2 class="m-3 text-center">5. Interaction by Vega-Lite</h2>
+            <div class="col-6 mx-auto gx-3 row">
+                <div id="vis-7" class="chart" style="width:100%"></div>
+            </div>
+
+            <h2 class="m-3 text-center">6. Interaction with JS</h2>
+            
+            <div class="col-6 mx-auto gx-3">
+                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                    <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+                    <label class="btn btn-outline-secondary" for="btnradio1">2012</label>
+                  
+                    <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+                    <label class="btn btn-outline-secondary" for="btnradio2">2013</label>
+                  
+                    <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+                    <label class="btn btn-outline-secondary" for="btnradio3">2014</label>
+
+                    <input type="radio" class="btn-check" name="btnradio" id="btnradio4" autocomplete="off">
+                    <label class="btn btn-outline-secondary" for="btnradio4">2015</label>
+                </div>
+                <div id="vis-8" class="chart" style="width:100%"></div>
+            </div>
+            
+        </div>
+        
+    </body>
+    <script type="text/javascript" src="./javascripts/event.js"></script>
+    <script type="text/javascript" src="./javascripts/bar-chart.js"></script>
+    
+</html>

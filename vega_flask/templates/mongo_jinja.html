@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js' integrity='sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g==' crossorigin='anonymous'></script> -->
+</head>
+<body>
+    <h1>#3_ MongoDB와 연결하기</h1>
+    <div>
+        <p>연결이 성공되면 아래에 데이터가 뜰꺼야!</p>
+        <p>------------------------------------</p>
+        {% for i in data %}
+            <p>이름: {{i.name}}</p>
+            <p>내용: {{i.content}}</p>
+            <p>---------------</p>
+        {% endfor %}
+    </div>    
+</body>
+<!-- <script type="text/javascript" src="{{ url_for('static',filename='./javascripts/mongodb-tutorial.js') }}"></script> -->
+</html>
