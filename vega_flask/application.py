@@ -51,6 +51,11 @@ def read_csv():
     f = open('static/data/seattle-weather.csv', 'r')
     return "".join(f.readlines())
 
+@app.route('/data/covid-19-example.csv')
+def read_csv():
+    f = open('static/data/covid-19-example.csv', 'r')
+    return "".join(f.readlines())
+
 @app.route('/data/seattleWeather')
 def fromDB():
     client = MongoClient('mongodb://localhost:27017/')

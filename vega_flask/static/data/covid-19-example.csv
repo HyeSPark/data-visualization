@@ -1,0 +1,106 @@
+﻿City,AgeGroup,Population,Status
+Seoul,0~10s,27,Death
+Seoul,0~10s,12,Recovered
+Seoul,0~10s,56,Active
+Seoul,10s,17,Death
+Seoul,10s,53,Recovered
+Seoul,10s,26,Active
+Seoul,20s,13,Death
+Seoul,20s,65,Recovered
+Seoul,20s,25,Active
+Seoul,30s,21,Death
+Seoul,30s,85,Recovered
+Seoul,30s,99,Active
+Seoul,40s,86,Death
+Seoul,40s,49,Recovered
+Seoul,40s,33,Active
+Seoul,50s,77,Death
+Seoul,50s,23,Recovered
+Seoul,50s,28,Active
+Seoul,Over 60s,87,Death
+Seoul,Over 60s,18,Recovered
+Seoul,Over 60s,99,Active
+Daegu,0~10s,108,Death
+Daegu,0~10s,92,Recovered
+Daegu,0~10s,75,Active
+Daegu,10s,37,Death
+Daegu,10s,52,Recovered
+Daegu,10s,109,Active
+Daegu,20s,107,Death
+Daegu,20s,55,Recovered
+Daegu,20s,95,Active
+Daegu,30s,99,Death
+Daegu,30s,56,Recovered
+Daegu,30s,100,Active
+Daegu,40s,26,Death
+Daegu,40s,43,Recovered
+Daegu,40s,24,Active
+Daegu,50s,66,Death
+Daegu,50s,29,Recovered
+Daegu,50s,74,Active
+Daegu,Over 60s,26,Death
+Daegu,Over 60s,91,Recovered
+Daegu,Over 60s,105,Active
+Daejeon,0~10s,37,Death
+Daejeon,0~10s,77,Recovered
+Daejeon,0~10s,57,Active
+Daejeon,10s,53,Death
+Daejeon,10s,47,Recovered
+Daejeon,10s,29,Active
+Daejeon,20s,59,Death
+Daejeon,20s,40,Recovered
+Daejeon,20s,59,Active
+Daejeon,30s,79,Death
+Daejeon,30s,77,Recovered
+Daejeon,30s,17,Active
+Daejeon,40s,87,Death
+Daejeon,40s,61,Recovered
+Daejeon,40s,30,Active
+Daejeon,50s,71,Death
+Daejeon,50s,109,Recovered
+Daejeon,50s,52,Active
+Daejeon,Over 60s,99,Death
+Daejeon,Over 60s,12,Recovered
+Daejeon,Over 60s,87,Active
+Busan,0~10s,55,Death
+Busan,0~10s,71,Recovered
+Busan,0~10s,96,Active
+Busan,10s,12,Death
+Busan,10s,80,Recovered
+Busan,10s,75,Active
+Busan,20s,44,Death
+Busan,20s,85,Recovered
+Busan,20s,97,Active
+Busan,30s,60,Death
+Busan,30s,42,Recovered
+Busan,30s,24,Active
+Busan,40s,11,Death
+Busan,40s,80,Recovered
+Busan,40s,61,Active
+Busan,50s,88,Death
+Busan,50s,48,Recovered
+Busan,50s,102,Active
+Busan,Over 60s,97,Death
+Busan,Over 60s,84,Recovered
+Busan,Over 60s,31,Active
+Gwangju,0~10s,63,Death
+Gwangju,0~10s,73,Recovered
+Gwangju,0~10s,26,Active
+Gwangju,10s,50,Death
+Gwangju,10s,25,Recovered
+Gwangju,10s,13,Active
+Gwangju,20s,95,Death
+Gwangju,20s,35,Recovered
+Gwangju,20s,17,Active
+Gwangju,30s,82,Death
+Gwangju,30s,108,Recovered
+Gwangju,30s,23,Active
+Gwangju,40s,93,Death
+Gwangju,40s,109,Recovered
+Gwangju,40s,87,Active
+Gwangju,50s,25,Death
+Gwangju,50s,22,Recovered
+Gwangju,50s,90,Active
+Gwangju,Over 60s,57,Death
+Gwangju,Over 60s,63,Recovered
+Gwangju,Over 60s,42,Active
