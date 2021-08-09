@@ -19,3 +19,12 @@ function updateValue2(e) {
         document.getElementById(`multiple-${i}-2`).textContent = str;
     }
 }
+
+// dropdown menu
+var dropdownMenu = document.querySelectorAll(".dropdown-menu li a")
+
+for (let i = 0; i < dropdownMenu.length; i++){
+    dropdownMenu[i].addEventListener('click', function(evt){
+        document.querySelector("#dropdownMenuButton1").innerHTML = evt.target.textContent
+    });
+}

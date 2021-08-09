@@ -118,7 +118,19 @@
             <h2 class="m-3 text-center">PR3</h2>
 
             <div class="col-6 mx-auto gx-3 row">
-                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                <div class="dropdown">
+                    <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                      Select...
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                      <li><a class="dropdown-item" id="opt-Seoul">Seoul</a></li>
+                      <li><a class="dropdown-item" id="opt-Daegu">Daegu</a></li>
+                      <li><a class="dropdown-item" id="opt-Daejeon">Daejeon</a></li>
+                      <li><a class="dropdown-item" id="opt-Busan">Busan</a></li>
+                      <li><a class="dropdown-item" id="opt-Gwangju">Gwangju</a></li>
+                    </ul>
+                </div>
+                <!-- <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
                     <input type="radio" class="btn-check" name="btnradio" id="radBtn-Seoul" autocomplete="off" checked>
                     <label class="btn btn-outline-secondary" for="radBtn-Seoul">Seoul</label>
                   
@@ -133,7 +145,7 @@
 
                     <input type="radio" class="btn-check" name="btnradio" id="radBtn-Gwangju" autocomplete="off">
                     <label class="btn btn-outline-secondary" for="radBtn-Gwangju">Gwangju</label>
-                </div>
+                </div> -->
                 <div id="vis-9" class="chart" style="width:100%"></div>
             </div>
             

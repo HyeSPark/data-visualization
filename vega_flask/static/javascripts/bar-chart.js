@@ -510,11 +510,11 @@ vegaEmbed('#vis-9', spec9)
     }
 
 
-    const radio1 = document.getElementById('radBtn-Seoul');
-    const radio2 = document.getElementById('radBtn-Daegu');
-    const radio3 = document.getElementById('radBtn-Daejeon');
-    const radio4 = document.getElementById('radBtn-Busan');
-    const radio5 = document.getElementById('radBtn-Gwangju');
+    const radio1 = document.getElementById('opt-Seoul');
+    const radio2 = document.getElementById('opt-Daegu');
+    const radio3 = document.getElementById('opt-Daejeon');
+    const radio4 = document.getElementById('opt-Busan');
+    const radio5 = document.getElementById('opt-Gwangju');
 
     
 
