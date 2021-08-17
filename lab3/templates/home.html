@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+{% block title %}Home{% endblock %}
+{% block body %}
+  <h2>Home</h2>
+  {% if error %}
+    <div class=error><strong>Error:</strong> {{ error }}
+    </div>
+  {% endif %}
+  <h3>Hello {{username}} !!</h3>
+  Welcome to IE481 Lab#2
+{% endblock %}

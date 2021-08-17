@@ -56,6 +56,10 @@ def read_pr_csv():
     f = open('static/data/covid-19-example.csv', 'r')
     return "".join(f.readlines())
 
+@app.route('/pr3')
+def pr3():
+    return render_template("pr3.html")
+
 @app.route('/data/seattleWeather')
 def fromDB():
     client = MongoClient('mongodb://localhost:27017/')

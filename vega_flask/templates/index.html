@@ -9,47 +9,58 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js' integrity='sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g==' crossorigin='anonymous'></script> -->
         <!-- <script src="https://cdn.jsdelivr.net/npm/vega@5"></script> -->
+        <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='stylesheets/stylesheet.css')}}">
         <title>Test Web Site</title> 
     </head>
     <body>
         <h1 class="m-4 text-center">Lab 3 - Vega Lite</h1>
         <div>
-            <h2 class="m-3 text-center">1. Fixed Width</h2>
+            <div class="bg-light p-1">
+                <h2 class="m-3 text-center">1. <span class="fw-light">Fixed Width</span></h2>
+            </div>
             <div class="m-3 row text-center">
                 <div class="col">
                     <div id="vis-1" class="chart"></div>
                 </div>
             </div>
-            <h2 class="m-3 text-center">2. Full Width with Window Size</h2>
+            <div class="bg-light p-1">
+                <h2 class="m-3 text-center">2. <span class="fw-light">Full Width with Window Size</span></h2>
+            </div>
             <div class="m-3 row text-center">
                 <div class="col">
                     <div id="vis-2" class="chart"></div>
                 </div>
             </div>
-            <h2 class="m-3 text-center">3-1. Responsive Width</h2>
+            <div class="bg-light p-1">
+                <h2 class="m-3 text-center">3-1. <span class="fw-light">Responsive Width</span></h2>
+            </div>
             <div class="m-3 gx-5 row text-center">
-                <div class="col-lg-8 col-sm-12">
+                <div class="col-lg-8 col-sm-12"> <!--breakpoint of 1st div's width -->
                     <div id="vis-3" class="chart" style="width:100%"></div>
                 </div>
-                <div class="col-lg-4 col-sm-12">
+                <div class="col-lg-4 col-sm-12"> <!--breakpoint of 2nd div's width -->
                     <div class="bg-light border border-3 rounded-3 p-3 text-start fs-5" style="width:100%">
                         <p>
-                            This graph explain the weather type of Seattle in each month of the year.
-                            There are sun, fog, drizzle, rain and snow as the weather type.
+                            This graph explains the weather type of Seattle for each month of a year.
+                            There are several weather types such as sun, fog, drizzle, rain and snow.
                         </p>
                     </div>
                 </div>
             </div>
-            <h2 class="m-3 text-center">3-2. Layout with Bootstrap</h2>
+            <div class="bg-light p-1">
+                <h2 class="m-3 text-center">3-2. <span class="fw-light">Layout with Bootstrap</span></h2>
+            </div>
             <div class="m-3 gx-3 row text-center">
-                <div class="col-lg-4 col-sm-6">
+                <div class="col-lg-4 col-sm-6"> 
                     <div id="vis-4" class="chart" style="width:100%"></div>
                 </div>
                 <div class="col-lg-8 col-sm-6">
                     <div id="vis-5" class="chart" style="width:100%"></div>
                 </div>
             </div>
-            <h2 class="m-3 text-center">3-3. Styling with Bootstrap component</h2>
+            <div class="bg-light p-1">
+                <h2 class="m-3 text-center">3-3. <span class="fw-light">Styling with Bootstrap component</span></h2>
+            </div>
             <div class="m-3 gx-5 row">
                 <div class="col-lg-6 col-sm-8 mx-auto">
                     <div class="card text-start">
@@ -62,8 +73,10 @@
                     </div>
                 </div>
             </div>
-            <h2 class="m-3 text-center">4. Callbacks</h2>
-            <div class="col-6 mx-auto gx-3 row">
+            <div class="bg-light p-1">
+                <h2 class="m-3 text-center">4. <span class="fw-light">Callbacks</span></h2>
+            </div>
+            <div class="col-6 mx-auto my-3 gx-3 row">
                 <div class="col">
                     <input id="number-1" type="text" class="form-control" placeholder="Number" aria-label="number" aria-describedby="basic-addon1">
                 </div>
@@ -90,15 +103,17 @@
                     </tbody>
                 </table>
             </div>
-
-            <h2 class="m-3 text-center">5. Interaction by Vega-Lite</h2>
-            <div class="col-6 mx-auto gx-3 row">
+            <div class="bg-light p-1">
+                <h2 class="m-3 text-center">5. <span class="fw-light">Interaction by Vega-Lite</span></h2>
+            </div>
+           
+            <div class="col-6 mx-auto my-3 gx-3 row">
                 <div id="vis-7" class="chart" style="width:100%"></div>
             </div>
-
-            <h2 class="m-3 text-center">6. Interaction with JS</h2>
-            
-            <div class="col-6 mx-auto gx-3">
+            <div class="bg-light p-1">
+                <h2 class="m-3 text-center">6. <span class="fw-light">Interaction with JS</span></h2>
+            </div>
+            <div class="col-6 mx-auto my-3 gx-3">
                 <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
                     <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
                     <label class="btn btn-outline-secondary" for="btnradio1">2012</label>
@@ -114,45 +129,11 @@
                 </div>
                 <div id="vis-8" class="chart" style="width:100%"></div>
             </div>
-
-            <h2 class="m-3 text-center">PR3</h2>
-
-            <div class="col-6 mx-auto gx-3 row">
-                <div class="dropdown">
-                    <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                      Select...
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                      <li><a class="dropdown-item" id="opt-Seoul">Seoul</a></li>
-                      <li><a class="dropdown-item" id="opt-Daegu">Daegu</a></li>
-                      <li><a class="dropdown-item" id="opt-Daejeon">Daejeon</a></li>
-                      <li><a class="dropdown-item" id="opt-Busan">Busan</a></li>
-                      <li><a class="dropdown-item" id="opt-Gwangju">Gwangju</a></li>
-                    </ul>
-                </div>
-                <!-- <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                    <input type="radio" class="btn-check" name="btnradio" id="radBtn-Seoul" autocomplete="off" checked>
-                    <label class="btn btn-outline-secondary" for="radBtn-Seoul">Seoul</label>
-                  
-                    <input type="radio" class="btn-check" name="btnradio" id="radBtn-Daegu" autocomplete="off">
-                    <label class="btn btn-outline-secondary" for="radBtn-Daegu">Daegu</label>
-                  
-                    <input type="radio" class="btn-check" name="btnradio" id="radBtn-Daejeon" autocomplete="off">
-                    <label class="btn btn-outline-secondary" for="radBtn-Daejeon">Daejeon</label>
-
-                    <input type="radio" class="btn-check" name="btnradio" id="radBtn-Busan" autocomplete="off">
-                    <label class="btn btn-outline-secondary" for="radBtn-Busan">Busan</label>
-
-                    <input type="radio" class="btn-check" name="btnradio" id="radBtn-Gwangju" autocomplete="off">
-                    <label class="btn btn-outline-secondary" for="radBtn-Gwangju">Gwangju</label>
-                </div> -->
-                <div id="vis-9" class="chart" style="width:100%"></div>
-            </div>
             
         </div>
         
     </body>
-    <script type="text/javascript" src="{{ url_for('static',filename='./javascripts/event.js') }}"></script>
-    <script type="text/javascript" src="{{ url_for('static',filename='./javascripts/bar-chart.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static',filename='./javascripts/main.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static',filename='./javascripts/functions.js') }}"></script>
     
 </html>
