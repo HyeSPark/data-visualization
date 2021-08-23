@@ -1,8 +1,5 @@
 # -*- coding: utf-8 -*-
 
-from sqlite3 import dbapi2 as sqlite3
-from hashlib import md5
-from contextlib import closing
 from flask import Flask, request, session, url_for, redirect, \
      render_template, flash
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -14,7 +11,7 @@ from flask_pymongo import PyMongo
 app = Flask(__name__)
 app.secret_key = "ie481-programming code"
 
-# making db
+# access to the db collection - records : the collection "register" of "register_db"
 mongodb_client = PyMongo(app, uri="mongodb://localhost:27017/register_db")
 db = mongodb_client.db
 records = db.register
@@ -31,8 +28,8 @@ def register():
         password1 = request.form["password"]
         password2 = request.form["password2"]
         
-        user_found = records.find_one({"username": username})
-        email_found = records.find_one({"email": email})
+        user_found = records.find({"username": username}) # whether the data already exists in the collection "records"
+        email_found = records.find({"email": email})
 
         if not username:
             error = 'You have to enter a username'
@@ -40,16 +37,16 @@ def register():
             error = 'You have to enter a valid email address'
         elif not password1:
             error = 'You have to enter a password'
-        elif user_found:
+        elif user_found: # if the username is already exists in the database,
             error = 'The username is already taken'
-        elif email_found:
+        elif email_found: # if the email is already exists in the database,
             error = 'This email already exists in database'
         elif password1 != password2:
             error = 'The two passwords do not match'
         else:
             hashed = generate_password_hash(password1)
             user_input = {'username': username, 'email': email, 'password': hashed}
-            records.insert_one(user_input)
+            records.insert_one(user_input) # insert the input into the collection "records"
             
             flash('You were successfully registered and can login now')
 
@@ -59,28 +56,28 @@ def register():
 
 @app.route('/public')
 def public_page():
-    """Displays the latest messages of all users."""
+    # Displays the latest messages of all users.
     return render_template('public-page.html')
 
 @app.route('/')
 def home():
-    if not "user_id" in session:
-        return redirect(url_for('public_page'))
+    if not "user_id" in session: # if the user is not logging in, the public page should be shown
+        return redirect(url_for('public_page')) 
     return render_template('home.html', username=session['user_id'])
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
-    if "user_id" in session:
+    if "user_id" in session: # if the user is logging in, 
         return redirect(url_for('home'))
     error = None
     if request.method == 'POST':
         username = request.form['username']
-        user_found = records.find_one({"username": username})
+        user_found = records.find({"username": username})
 
-        if not user_found:
+        if not user_found: # if there isn't the user name in the database,
             error = 'Invalid username'
-        elif not check_password_hash(user_found['password'],
-                                     request.form['password']):
+        elif not check_password_hash(user_found['password'], # the 'password' field's value of founded data
+                                     request.form['password']): 
             error = 'Invalid password'
         else:
             flash('You were logged in')
@@ -91,7 +88,7 @@ def login():
 
 @app.route('/logout')
 def logout():
-    """Logs the user out."""
+    # Logs the user out.
     if 'user_id' in session:
         flash('You were logged out')
         session.pop('user_id', None)
