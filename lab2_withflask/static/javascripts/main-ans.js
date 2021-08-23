@@ -1,10 +1,12 @@
-//
+// ***********************
 // Practice 1. Fixed Width
-//
+// ***********************
 
 var yourVlSpec1 = {
     $schema: 'https://vega.github.io/schema/vega-lite/v5.json',
+    // ** answer **
     width: 100, // the number can be hard-coded
+    // ************
     description: 'A simple bar chart with embedded data.',
     data: {
         values: [
@@ -47,15 +49,16 @@ var yourVlSpec1 = {
   
 vegaEmbed('#vis-1', yourVlSpec1); // embeding the graph in html
 
-//
+// ********************************************
 // Practice 2. Fixed Width with the window size
-//
+// ********************************************
 
 var visWidth = document.getElementById('vis-2').clientWidth/4; // element.clientWidth can get the window width size
 
 
 var yourVlSpec2 = {
     $schema: 'https://vega.github.io/schema/vega-lite/v5.json',
+    // ** answer **
     width: visWidth, // Using variable in specification
     description: 'A simple bar chart with embedded data.',
     data: {
@@ -99,14 +102,15 @@ var yourVlSpec2 = {
 
   vegaEmbed('#vis-2', yourVlSpec2);
   
-//
+// ******************************************************************
 // Practice 3. Responsive Width, Layout and Component Using Bootstrap
-//
+// ******************************************************************
 
   var yourVlSpec3 = {
     $schema: "https://vega.github.io/schema/vega-lite/v5.json",
     data: {"url": "data/seattle-weather.csv"},
     mark: "bar",
+    // ** answer **
     width: "container", // the graph's width fits in the divider that contains this graph
     encoding: {
       x: {
@@ -136,23 +140,28 @@ vegaEmbed('#vis-4', yourVlSpec3); // practice 3-2. Layout with Bootstrap - first
 vegaEmbed('#vis-5', yourVlSpec3); // practice 3-2. Layout with Bootstrap - second graph
 vegaEmbed('#vis-6', yourVlSpec3); // practice 3-3. Styling with Bootstrap component
 
-//
+// ******************************
 // Practice 4. Callbacks using JS
-//
+// ******************************
 
 const input1 = document.getElementById('number-1'); // node of html element that has 'number-1' as ID
 const input2 = document.getElementById('number-2');
 
-input1.addEventListener('change', updateValue1); // make the event listener in that html element. 
+// make the event listener in each html element and bind below functions
+// - when input1, 2 has change, functions below is called respectively
+// ** answer **
+input1.addEventListener('change', updateValue1);
 input2.addEventListener('change', updateValue2);
-
-// when input1, 2 has change, functions below is called respectively
+// ************
 
 function updateValue1(e) {
     for (i=1; i<6; i++){
         if (e.target.value !== "") var str = `${e.target.value} x ${i} = ${e.target.value*i}`
         else var str = " "
-        document.getElementById(`multiple-${i}-1`).textContent = str;
+        let strId = `multiple-${i}-1` // id of the table cell - 1st col and ith row
+        // ** answer **
+        document.getElementById(strId).textContent = str;
+        // ************
     }
 }
 
@@ -160,13 +169,16 @@ function updateValue2(e) {
     for (i=1; i<6; i++){
         if (e.target.value !== "") var str = `${e.target.value} x ${i} = ${e.target.value*i}`
         else var str = " "
-        document.getElementById(`multiple-${i}-2`).textContent = str;
+        let strId = `multiple-${i}-2` // id of the table cell - 2nd col and ith row
+        // ** answer **
+        document.getElementById(strId).textContent = str;
+        // ************
     }
 }
 
-//
+// ************************************
 // Practice 5. Interaction by Vega-Lite
-// 
+// ************************************
 
 var yourVlSpec4 = {
     $schema: "https://vega.github.io/schema/vega-lite/v5.json",
@@ -247,9 +259,9 @@ var yourVlSpec4 = {
 
 vegaEmbed('#vis-7', yourVlSpec4);
 
-//
+// *******************************
 // Practice 6. Interaction with JS
-//
+// *******************************
 
 var yourVlSpec5 = {
     $schema: "https://vega.github.io/schema/vega-lite/v5.json",
@@ -358,7 +370,9 @@ vegaEmbed('#vis-8', yourVlSpec5)
             var changeSet = vega.changeset() // the change set should be the form of vega.changeset().remove(..).insert(..)
                 .remove(() => true) // remove all
                 .insert(dataVal); // insert filtered data value above
+            // ** answer **
             res.view.change('myData', changeSet).run(); // change of dataset : res.view.change(data name in specification, change set).run()
+            // ************
         }
 
 
@@ -368,20 +382,22 @@ vegaEmbed('#vis-8', yourVlSpec5)
         const radio4 = document.getElementById('btnradio4');
 
         response.then(function(v) { // after the loading of const "response", this block will be executed
-            drawVl8(v, "2012");
+          // ** answer **
+          drawVl8(v, "2012");
 
-            radio1.addEventListener('click', function(){
-              drawVl8(v, "2012");
-            })
-            radio2.addEventListener('click', function(){
-              drawVl8(v, "2013");
-            })
-            radio3.addEventListener('click', function(){
-              drawVl8(v, "2014");
-            })
-            radio4.addEventListener('click', function(){
-              drawVl8(v, "2015");
-            })
+          radio1.addEventListener('click', function(){
+            drawVl8(v, "2012");
+          })
+          radio2.addEventListener('click', function(){
+            drawVl8(v, "2013");
+          })
+          radio3.addEventListener('click', function(){
+            drawVl8(v, "2014");
+          })
+          radio4.addEventListener('click', function(){
+            drawVl8(v, "2015");
+          })
+          // ***********
     
         })
 });
