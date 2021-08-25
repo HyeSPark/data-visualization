@@ -28,6 +28,8 @@ function checkGuess() {
     // userGuess is the value of element that has the class of 'guessField';
     let userGuess = Number(guessField.value);
     
+    // 1. Add the history of user's guess
+    // - in the arrGuesses array
     // ********************
     // ** implement here **
     // ********************
@@ -38,15 +40,18 @@ function checkGuess() {
         guesses.textContent = 'Previous guesses: ';
     }
 
+    // 2. Add the string of current guess (i.e. userGuess) in the document
     // ********************
     // ** implement here **
     // ********************
     // hint : guesses.textContent += ...
     
     if (userGuess === randomNumber) {
-        lastResult.textContent = ' ** change here ** ';
+        lastResult.textContent = ' ** change here ** '; // 3. What is the lastResult Node? What should its text be?
         lastResult.style.backgroundColor = 'green';
         lowOrHi.textContent = '';
+        // 1. Add the history of user's guess
+        // - in the objGuesses object, the field is correct
         // ********************
         // ** implement here **
         // ********************
@@ -62,12 +67,16 @@ function checkGuess() {
         lastResult.style.backgroundColor = 'red';
         if(userGuess < randomNumber) {
             lowOrHi.textContent = 'Last guess was too low!' ;
+            // 1. Add the history of user's guess
+            // - in the objGuesses object, the field is low
             // ********************
             // ** implement here **
             // ********************
             // hint : objGuesses["low"].push(..);
         } else if(userGuess > randomNumber) {
             lowOrHi.textContent = 'Last guess was too high!';
+            // 1. Add the history of user's guess
+            // - in the objGuesses object, the field is high
             // ********************
             // ** implement here **
             // ********************
@@ -82,7 +91,7 @@ function checkGuess() {
 guessSubmit.addEventListener('click', checkGuess);
 
 function setGameOver() {
-    return
+    return // delete when you implement here
     // ********************************************
     // ** Uncomment below and fill in the blanks **
     // ********************************************
@@ -105,7 +114,7 @@ function setGameOver() {
 }
 
 function resetGame() {
-    return 
+    return // delete when you implement here
     // ********************************************
     // ** Uncomment below and fill in the blanks **
     // ********************************************
